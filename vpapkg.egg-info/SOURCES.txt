@@ -1,0 +1,9 @@
+setup.py
+vpapkg/__init__.py
+vpapkg/mysay.py
+vpapkg/mysr.py
+vpapkg.egg-info/PKG-INFO
+vpapkg.egg-info/SOURCES.txt
+vpapkg.egg-info/dependency_links.txt
+vpapkg.egg-info/not-zip-safe
+vpapkg.egg-info/top_level.txt
