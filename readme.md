@@ -19,4 +19,5 @@ This Python script uses the `speech_recognition` library to create a voice assis
 To install the required dependencies, run the following command:
 
 ```bash
-pip install SpeechRecognition pyaudio pyttsx3
+pip install -e vpapkg
+pip install SpeechRecognition pyaudio pyttsx3 
