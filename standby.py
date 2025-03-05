@@ -25,7 +25,7 @@ random_greeting = random.choice(greetings)
 # Print the random greeting
 print_say(random_greeting)
 
-#TODO merge below into package, mysr
+#Listen loop
 while True:
     print('Python is listening...')
     inp = "" 
