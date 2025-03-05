@@ -1,5 +1,6 @@
 # Get rid of ALSA lib error messages in Linux
 import platform
+from .connectivity import is_online
 
 if  platform.system() == "Linux":
     from ctypes import *
@@ -17,14 +18,17 @@ if  platform.system() == "Linux":
 # Now define the voice_to_text() function for all platforms    
 import speech_recognition as sr
 
-speech = sr.Recognizer()
+recognizer = sr.Recognizer()
 def voice_to_text():
     voice_input = "" 
     with sr.Microphone() as source:
-        speech.adjust_for_ambient_noise(source)
+        recognizer.adjust_for_ambient_noise(source)
         try:
-            audio = speech.listen(source)
-            voice_input = speech.recognize_google(audio)
+            audio = recognizer.listen(source)
+            if is_online():
+                voice_input = recognizer.recognize_google(audio)
+            else:
+                voice_input = recognizer.recognize_sphinx(audio)
         except sr.UnknownValueError:
             pass
         except sr.RequestError:
